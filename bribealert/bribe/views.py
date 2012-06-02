@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 from models import Bribe
-from forms import BribeForm
+from forms import BribeForm, NationalChapterForm
 from helpers import get_country_from_geo_location
 
 @csrf_exempt
@@ -23,4 +23,9 @@ def upload(request):
 
 
 def get_national_chapter(request):
-    pass
+    form = NationalChapterForm(request.GET)
+    if form.is_valid():
+        country = get_country_from_geo_location(request.GET['lat'], request.GET['lon'])
+        print country
+        return HttpResponseBadRequest()
+    return HttpResponseBadRequest()

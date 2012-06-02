@@ -1,4 +1,4 @@
-from django.forms import ModelForm, Form
+from django.forms import *
 from models import Bribe
 
 class BribeForm(ModelForm):
