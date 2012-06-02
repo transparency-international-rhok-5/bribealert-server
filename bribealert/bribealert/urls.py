@@ -4,7 +4,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^upload/$', 'bribe.views.upload'),
+    url(r'^upload/$', 'bribe.views.upload'),
+    url(r'^get_national_chapter/$', 'bribe.views.get_national_chapter'),
     url(r'^admin/', include(admin.site.urls)),
 
     # Examples:

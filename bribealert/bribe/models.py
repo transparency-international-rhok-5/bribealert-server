@@ -37,3 +37,10 @@ class Country(models.Model):
 
 class NationalChapter(Group):
     country = models.ForeignKey('Country')
+    street = models.CharField(max_length=255, blank=True)
+    zipcode = models.CharField(max_length=10, blank=True)
+    city = models.CharField(max_length=50, blank=True)
+    telephone = models.CharField(max_length=20, blank=True)
+    fax = models.CharField(max_length=20, blank=True)
+    email = models.EmailField(blank=True)
+    url = models.URLField(blank=True)
