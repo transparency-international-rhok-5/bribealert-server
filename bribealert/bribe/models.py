@@ -3,6 +3,7 @@ import random
 
 from django.db import models
 from django.conf import settings
+from django.contrib.auth.models import Group
 
 class Bribe(models.Model):
     lon = models.FloatField()
@@ -26,3 +27,6 @@ class Bribe(models.Model):
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
+
+class NationalChapter(Group):
+    country = models.ForeignKey(Country)
