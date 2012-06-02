@@ -1,3 +1,4 @@
 env
 bribealert/bribealert.db
 *.pyc
+.DS_Store
