@@ -6,6 +6,7 @@ from pygeocoder import Geocoder
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import Group
+from django.forms.models import model_to_dict
 
 class BribeManager(models.Manager):
     def published(self):
@@ -55,3 +56,9 @@ class NationalChapter(Group):
     fax = models.CharField(max_length=20, blank=True)
     email = models.EmailField(blank=True)
     url = models.URLField(blank=True)
+    
+    def to_dict(self):
+        result = model_to_dict(self, fields= ['street', 'zipcode', 'city', 'telephone', 'fax', 'email', 'url'])
+        result['country'] = self.country.name
+        
+        return result

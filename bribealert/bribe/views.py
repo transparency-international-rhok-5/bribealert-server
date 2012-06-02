@@ -24,9 +24,13 @@ def upload(request):
 
 def get_national_chapter(request):
     form = NationalChapterForm(request.GET)
+
     if form.is_valid():
         country = get_country_from_geo_location(float(request.GET['lat']), float(request.GET['lon']))
         chapter = NationalChapter.objects.get(country=country)
-        response = simplejson.dumps({'country': chapter.name})
+
+        response = simplejson.dumps(chapter.serialize())
+
         return HttpResponse(response, mimetype='application/json')
+
     return HttpResponseBadRequest()
