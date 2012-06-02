@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from models import Bribe
+from models import Bribe, NationalChapter
 from forms import BribeForm, NationalChapterForm
 from helpers import get_country_from_geo_location
 
@@ -16,7 +16,7 @@ def upload(request):
     if form.is_valid():
         new_bribe = form.save()
         response = simplejson.dumps({'id': new_bribe.id})
-        
+
         return HttpResponse(response, mimetype='application/json')
 
     return HttpResponseBadRequest()
@@ -25,7 +25,8 @@ def upload(request):
 def get_national_chapter(request):
     form = NationalChapterForm(request.GET)
     if form.is_valid():
-        country = get_country_from_geo_location(request.GET['lat'], request.GET['lon'])
-        print country
-        return HttpResponseBadRequest()
+        country = get_country_from_geo_location(float(request.GET['lat']), float(request.GET['lon']))
+        chapter = NationalChapter.objects.get(country=country)
+        response = simplejson.dumps({'country': chapter.name})
+        return HttpResponse(response, mimetype='application/json')
     return HttpResponseBadRequest()
