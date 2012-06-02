@@ -7,6 +7,7 @@ from django.template import RequestContext
 
 from models import Bribe
 from forms import BribeForm
+from helpers import get_country_from_geo_location
 
 @csrf_exempt
 def upload(request):
@@ -19,3 +20,7 @@ def upload(request):
         return HttpResponse(response, mimetype='application/json')
 
     return HttpResponseBadRequest()
+
+
+def get_national_chapter(request):
+    pass

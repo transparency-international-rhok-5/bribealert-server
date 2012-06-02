@@ -4430,6 +4430,13 @@
       "model":"bribe.nationalchapter",
       "fields":{
          "country":73,
+         "street":"Alte Schönhauser Str. 44",
+         "zipcode":"10119",
+         "city":"Berlin",
+         "telephone":"+49 30 549 898 0",
+         "fax":"+49 30 5498 9822",
+         "email":"office@transparency.de",
+         "url":"www.transparency.de",
          "permissions":[
 
          ]
@@ -4960,6 +4967,12 @@
       "model":"bribe.nationalchapter",
       "fields":{
          "country":126,
+         "street":"Dulce Olivia 73, Esquina Melchor Ocampo",
+         "zipcode":"04000",
+         "city":"Mexico City",
+         "telephone":"+52-55-5659 4714",
+         "email":"info@tm.org.mx",
+         "url":"http://www.transparenciamexicana.org.mx/",
          "permissions":[
 
          ]
@@ -5330,6 +5343,14 @@
       "model":"bribe.nationalchapter",
       "fields":{
          "country":163,
+         "street":"Nikoloyamskaya ul. 6",
+         "zipcode":"109189",
+         "city":"Moscow",
+         "telephone":"+7-495-915 0019",
+         "fax":"",
+         "email":"info@transparency.org.ru",
+         "url":"www.transparency.org.ru",
+
          "permissions":[
 
          ]
