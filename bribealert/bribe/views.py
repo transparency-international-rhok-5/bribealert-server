@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
+from models import Bribe
 from forms import BribeForm
 from helpers import get_country_from_geo_location
 
@@ -18,8 +19,7 @@ def upload(request):
         
         return HttpResponse(response, mimetype='application/json')
 
-    return render_to_response('upload.html', RequestContext(request, {'form': form}))
-#    return HttpResponseBadRequest()
+    return HttpResponseBadRequest()
 
 
 def get_national_chapter(request):
