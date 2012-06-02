@@ -1,7 +1,9 @@
 import simplejson
 
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 from forms import BribeForm
 
@@ -13,6 +15,7 @@ def upload(request):
         new_bribe = form.save()
         response = simplejson.dumps({'id': new_bribe.id})
         
-        return HttpResponseRedirect(response, mimetype='application/json')
+        return HttpResponse(response, mimetype='application/json')
 
-    return HttpResponseBadRequest()
+    return render_to_response('upload.html', RequestContext(request, {'form': form}))
+#    return HttpResponseBadRequest()

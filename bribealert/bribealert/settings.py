@@ -109,7 +109,7 @@ ROOT_URLCONF = 'bribealert.urls'
 WSGI_APPLICATION = 'bribealert.wsgi.application'
 
 TEMPLATE_DIRS = (
-	os.path.join(SITE_ROOT, 'templates')
+	os.path.join(SITE_ROOT, 'template')
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -122,6 +122,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'bribe'
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
