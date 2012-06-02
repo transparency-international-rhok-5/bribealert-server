@@ -9,7 +9,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^upload/$',   'bribe.views.upload'),
-    url(r'^get_national_chapter/$', 'bribe.views.get_national_chapter'),
+    url(r'^national-chapter/$', 'bribe.views.get_national_chapter'),
 	url(r'^$',          direct_to_template, {'template': 'home.html', 'extra_context': { 
 	    'bribes': Bribe.objects.published(), 
     }}),    

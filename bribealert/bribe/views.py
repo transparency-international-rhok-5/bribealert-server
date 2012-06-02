@@ -29,7 +29,7 @@ def get_national_chapter(request):
         country = get_country_from_geo_location(float(request.GET['lat']), float(request.GET['lon']))
         chapter = NationalChapter.objects.get(country=country)
 
-        response = simplejson.dumps(chapter.serialize())
+        response = simplejson.dumps(chapter.to_dict())
 
         return HttpResponse(response, mimetype='application/json')
 
