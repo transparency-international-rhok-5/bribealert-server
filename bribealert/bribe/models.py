@@ -16,3 +16,6 @@ class Bribe(models.Model):
         self.secure_token = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(settings.SECURE_TOKEN_LENGTH))
 
         super(Bribe, self).save(*args, **kwargs)
+
+class Country(models.Model):
+    name = models.CharField(max_length=100)
