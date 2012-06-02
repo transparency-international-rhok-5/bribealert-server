@@ -8,3 +8,5 @@ BribeAlert Backend
 * `cd bribealert`
 * `python manage.py syncdb`
 * `python manage.py runserver`
+* visit `http://localhost:8000`
+* upload to `http://localhost:8000/upload/`
