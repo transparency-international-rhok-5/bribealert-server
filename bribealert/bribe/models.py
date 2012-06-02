@@ -1,10 +1,16 @@
 import string
 import random
 
+from pygeocoder import Geocoder
+
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import Group
 
+class BribeManager(models.Manager):
+    def published(self):
+        return self.filter(published=True)
+    
 class Bribe(models.Model):
     lat = models.FloatField()
     lon = models.FloatField()
@@ -13,6 +19,8 @@ class Bribe(models.Model):
     secure_token = models.CharField(max_length=32, unique=True, blank=True)
     record = models.FileField(upload_to='records/')
     published = models.BooleanField(default=False)
+    
+    objects = BribeManager()
     
     def __generate_secure_token(self):
         while 1:
@@ -28,6 +36,9 @@ class Bribe(models.Model):
         self.secure_token = self.__generate_secure_token()
         self.country = get_country_from_geo_location(self.lat, self.lon)
         super(Bribe, self).save(*args, **kwargs)
+        
+    def __unicode__(self):
+        return str(Geocoder.reverse_geocode(self.lat, self.lon)[0])
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
