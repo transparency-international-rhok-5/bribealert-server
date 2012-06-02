@@ -6,8 +6,9 @@ from django.conf import settings
 from django.contrib.auth.models import Group
 
 class Bribe(models.Model):
-    lon = models.FloatField()
     lat = models.FloatField()
+    lon = models.FloatField()
+    country = models.ForeignKey('Country', blank=True, null=True)
     date = models.DateTimeField()
     secure_token = models.CharField(max_length=32, unique=True, blank=True)
     record = models.FileField(upload_to='records/')
@@ -22,11 +23,17 @@ class Bribe(models.Model):
                 return secure_token
     
     def save(self, *args, **kwargs):
+        from bribe.helpers import get_country_from_geo_location
+        
         self.secure_token = self.__generate_secure_token()
+        self.country = get_country_from_geo_location(self.lat, self.lon)
         super(Bribe, self).save(*args, **kwargs)
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
+    
+    def __unicode__(self):
+        return self.name
 
 class NationalChapter(Group):
-    country = models.ForeignKey(Country)
+    country = models.ForeignKey('Country')
