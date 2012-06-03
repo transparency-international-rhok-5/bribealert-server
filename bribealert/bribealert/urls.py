@@ -14,9 +14,7 @@ urlpatterns = patterns('',
     (r'^messages/add/$',            	'bribe.views.add_message'),
     (r'^admin/chat/(?P<id>\d+)/$',	    'bribe.views.chat'),
     (r'^national-chapter/$',            'bribe.views.get_national_chapter'),
-	(r'^$',                              direct_to_template, {'template': 'home.html', 'extra_context': { 
-	    'bribes': Bribe.objects.published(), 
-    }}),    
-    (r'^admin/',                          include(admin.site.urls)),
-    (r'^media/(?P<path>.*)$',             'django.views.static.serve', {'document_root': settings.MEDIA_ROOT})
+	(r'^$',                             'bribe.views.home'),    
+    (r'^admin/',                        include(admin.site.urls)),
+    (r'^media/(?P<path>.*)$',           'django.views.static.serve', {'document_root': settings.MEDIA_ROOT})
 )
