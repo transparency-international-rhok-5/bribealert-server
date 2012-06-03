@@ -40,7 +40,7 @@ class Bribe(models.Model):
         super(Bribe, self).save(*args, **kwargs)
         
     def __unicode__(self):
-        return str(Geocoder.reverse_geocode(self.lat, self.lon)[0])
+        return unicode(Geocoder.reverse_geocode(self.lat, self.lon)[0])
 
 class Country(models.Model):
     name = models.CharField(max_length=100)

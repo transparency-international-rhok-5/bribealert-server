@@ -1,15 +1,23 @@
 <div class="evidence">
 <h2><a id="bribe{{bribe.id}}">Evidence #{{bribe.id}}</a></h2>
-<abbr>{{bribe.date|date:"M Y"}}</abbr>
 
-<br /><br />
+
+<br />
 
 <div class="row">
 	<div class="span5">		
+		<p class="meta-data">{{bribe.date}}<br />
+		{{bribe}}</p>
+		<br />
 		<audio controls="controls">
 		  <source src="{{MEDIA_URL}}{{bribe.record}}" type="audio/mp4" />
 		  Your browser does not support the audio element.
 		</audio>
+		<br /><br />
+		
+		<p>
+			{{bribe.description|linebreaksbr}}
+		</p>
 	</div>
 
 	<div class="span4">

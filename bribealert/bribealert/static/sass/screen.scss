@@ -8,10 +8,12 @@
 @import "./colors.scss";
 
 #content {
-	margin-top: 6em;
+	margin-top: 4em;
 	overflow:auto;
 	padding-bottom: 20em;
 	color: $secondary-color;
+	border: 1px solid #ccc;
+	padding: 1em;
 	
 	a {
 		color: $darkBlue;
@@ -26,32 +28,31 @@
 	p, h3 {
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   	color: inherit;
-  	font-size: 1.1em;
+  	font-size: 1.0em;
   	font-weight: 200;
-  	line-height: 1.7em;
+  	line-height: 1.6em;
 	}
 	
-
-	
-
-	
-	h3 {
-		font-size: 1.0em;
-		font-family: 'DIN Next W01 Regular';
+	p.transparency-description {
+		font-size: 0.8em;
 	}
-	
-	.evidence {		
+		
+	.evidence {	
+		border-bottom: 2px solid $darkBlue;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		
 		h2 {
 			font-size: 1.6em;
 			line-height: 1.7em;
 			font-family: 'Helvetica Neue';
 		}
-		
-		abbr {
+				
+		p.meta-data {
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			color: inherit;
-			font-size: 0.8em;
 			font-weight: 200;
+			font-style: italic;
 		}
 		
 		.detail	{
