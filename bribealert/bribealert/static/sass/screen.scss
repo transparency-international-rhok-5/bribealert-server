@@ -7,13 +7,37 @@
 @import "compass/css3/border-radius";
 @import "./colors.scss";
 
+body {
+	background: #eee;
+	padding-bottom: 3em;
+}
+
 #content {
+	background: #fff;
 	margin-top: 4em;
-	overflow:auto;
-	padding-bottom: 20em;
+	margin-bottom: 10em;
 	color: $secondary-color;
 	border: 1px solid #ccc;
 	padding: 1em;
+	position: relative;
+	@include border-radius(4px, 4px);
+	
+	.worldmap {
+		height: 220px;
+	}
+		
+	#logo {
+		position: absolute;
+		right: 50px;
+		top: 120px;
+		width: 100px;
+		z-index: 1000;
+	}
+	
+	#app-download-btn {
+		font-size: 1.3em;
+		float: none;
+	}
 	
 	a {
 		color: $darkBlue;

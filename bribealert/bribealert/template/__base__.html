@@ -8,20 +8,19 @@
 </head>
 <body>
 	<div class="container" id="content">
-		<div class="row">
+		<div class="worldmap"></div>
+		<img src="{{ STATIC_URL }}img/bribealarm.png" id="logo" />			
+		
+		<div class="row" style="margin-top: 2em">
 			<div class="span9">
-				<div class="hero-unit">
-					Hello
-				</div>
 				{% block content %}	
 
 				{% endblock %}
 			</div>
 			<div class="sidebar span3">
-				<p style="text-align: center; padding-top: 100px;">
-					<img src="{{ STATIC_URL }}img/bribealarm.png" width="150" />
-					
-					<a href="" class="btn btn-primary btn-large">Download Android App</a>
+				<p style="text-align:right;">
+					<a href="" class="btn btn-primary btn-large span2" id="app-download-btn">Download<br />Android App</a>
+				</p>
 					<br /><br />
 					<a href="http://transparency.org/"><img src="img/transparency.png" width="180" /></a>
 				</p>

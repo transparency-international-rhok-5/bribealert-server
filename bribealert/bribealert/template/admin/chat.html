@@ -1,0 +1,67 @@
+{% extends "admin/base_site.html" %}
+
+
+{% block extrastyle %}
+  {{ block.super }}
+    <style>
+			#chat {
+				vertical-align: top;
+			}
+      .author {
+				width: 200px;
+				text-align: right;
+			}
+			
+			#chat p {
+				margin: 0px;
+			}
+			
+			#chat td {
+				padding: 0.8em;
+			}
+			
+			
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+<p style="padding: 1em;">
+	<i>{{bribe.date}}</i><br />
+	<i>{{bribe}}</i>
+</p>
+
+<table id="chat">
+	<tr>
+		<td>{{bribe.date}}</td><td class="author"><b>Whistleblower:</b></td>
+		<td><p>{{bribe.description}}</td>
+	</tr>
+	
+{% for message in bribe.message_set.all %}
+<tr>
+	<td>{{message.date}}</td>
+{% if message.user %}
+	<td class="author"><b>{{message.user}}:</b></td>
+{% else %}
+	<td class="author"><b>Whistleblower:</b></td>
+{% endif %}
+
+<td><p>{{message.text}}</p></td>
+</tr>
+{% endfor %}
+<tr>
+	<td>&nbsp;</td>
+	<td class="author"><b>Text:</b></td>
+	<td><form method="post">
+		{% csrf_token %}
+		{{form.text}}
+		<br />
+		<button type="submit">Send</button>
+	</form></td>
+</tr>
+</table>
+
+
+
+{% endblock %}

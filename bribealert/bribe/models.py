@@ -24,6 +24,13 @@ class Bribe(models.Model):
     
     objects = BribeManager()
     
+    def chat_link(self): 
+        from django.utils.safestring import mark_safe 
+        return mark_safe('<a href="/admin/chat/%d/">Contact whistleblower</a>' % (self.id, )) 
+
+    chat_link.short_description = "Chat" 
+    chat_link.allow_tags = True
+    
     def __generate_secure_token(self):
         while 1:
             secure_token = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(settings.SECURE_TOKEN_LENGTH))
@@ -69,5 +76,14 @@ class Message(models.Model):
     # the message was sent by the whistle blower
     user = models.ForeignKey(User, null=True)
     bribe = models.ForeignKey(Bribe)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
+    
+    def to_dict(self):
+        result = model_to_dict(self, fields= ['text'])
+        result['date'] = str(self.date)
+
+        if self.user:
+            result['user'] = self.user.__unicode__()
+        
+        return result

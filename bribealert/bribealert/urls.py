@@ -9,11 +9,14 @@ from bribe.models import Bribe
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	(r'^upload/$',   'bribe.views.upload'),
-    (r'^national-chapter/$', 'bribe.views.get_national_chapter'),
-	(r'^$',          direct_to_template, {'template': 'home.html', 'extra_context': { 
+	(r'^upload/$',                      'bribe.views.upload'),
+    (r'^messages/$',                	'bribe.views.messages'),
+    (r'^messages/add/$',            	'bribe.views.add_message'),
+    (r'^admin/chat/(?P<id>\d+)/$',	    'bribe.views.chat'),
+    (r'^national-chapter/$',            'bribe.views.get_national_chapter'),
+	(r'^$',                              direct_to_template, {'template': 'home.html', 'extra_context': { 
 	    'bribes': Bribe.objects.published(), 
     }}),    
-    (r'^admin/',     include(admin.site.urls)),
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT})
+    (r'^admin/',                          include(admin.site.urls)),
+    (r'^media/(?P<path>.*)$',             'django.views.static.serve', {'document_root': settings.MEDIA_ROOT})
 )
