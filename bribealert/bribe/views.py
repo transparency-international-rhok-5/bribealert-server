@@ -50,6 +50,10 @@ def chat(request, id):
             
     return render_to_response('admin/chat.html', RequestContext(request, {'bribe': bribe, 'form': form}))
 
+def home(request):
+    bribes = Bribe.objects.published()
+    return render_to_response('home.html', RequestContext(request, {'bribes': bribes}))
+
 def messages(request):
     bribe = Bribe.objects.get(secure_token=request.GET['secure_token'])
     
