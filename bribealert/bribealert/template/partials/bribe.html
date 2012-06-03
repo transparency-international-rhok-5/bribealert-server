@@ -27,7 +27,8 @@
 			<p>This happened in <a href="http://www.transparency.org/country#{{bribe.country.code3}}" target="_blank"><img src="{{STATIC_URL}}img/png/{{bribe.country.code2|lower}}.png" alt="{{bribe.country.code2|lower}}" />&nbsp;{{bribe.country}}</a>.</p>
 				<div data-lon="{{bribe.lon}}" data-lat="{{bribe.lat}}" data-id="bribe{{bribe.id}}"></div>
 
-			<p data-countryCode="{{bribe.country.code3}}"></p>
+			<p data-countryCode="{{bribe.country.code3}}">
+				In <a href="http://www.transparency.org/country#{{bribe.country.code3}}"><img src="{{STATIC_URL}}img/png/{{bribe.country.code2|lower}}.png" alt="{{bribe.country.code2}}" />&nbsp;{{bribe.country}}</a>, </p>
 		</div>
 	</div>
 </div>

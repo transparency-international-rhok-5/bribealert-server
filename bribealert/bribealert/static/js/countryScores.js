@@ -12,34 +12,39 @@
 		['support', '% of people would support a colleague or friend.'],
 		['involve', '% of people could imagin getting involved.'],
 		['report', '% of people would report an incident.'],
-		['politic', ''],
-		['parliament', ''],
-		['police', ''],
-		['business', ''],
-		['media', ''],
-		['officials', ''],
-		['judiciacy', ''],
-		['ngo', ''],
-		['religion', ''],
-		['military', ''],
-		['education', ''],
-		['speed', ''],
-		['problem', ''],
-		['service', '']
+		['politic', '% of people see politics corrupt or extremely corrupt.'],
+		['parliament', '% of people see parliament corrupt or extremely corrupt.'],
+		['police', '% of people see police corrupt or extremely corrupt.'],
+		['business', '% of people see business corrupt or extremely corrupt.'],
+		['media', '% of people see media corrupt or extremely corrupt.'],
+		['officials', '% of people see officials corrupt or extremely corrupt.'],
+		['judiciary', '% of people see judiciary corrupt or extremely corrupt.'],
+		['ngo', '% of people see NGOs corrupt or extremely corrupt.'],
+		['religion', '% of people see religious bodies corrupt or extremely corrupt.'],
+		['military', '% of people see military corrupt or extremely corrupt.'],
+		['education', '% of people see the education system corrupt or extremely corrupt.'],
+		['speed', '% of people payed their last bribe to speed things up.'],
+		['problem', '% of people payed their last bribe to avoid problems with authorities.'],
+		['service', '% of people payed their last bribe to receive a service entitled to it.']
 	];
 	
 	$.fn.countryScores = function(){
-		this.each(function(){
-			var this.data("countryCode");
+		this.each(function(i, el){
+			var self = $(el);
+			var countryCode = self.data("countrycode");
 
-			var self = this;
-			$.getJson('js/countryScores.json', function(data){
-				phraseId = parseInt(Math.random()*scorePhrases.length -1);
+			$.getJSON('js/countryScores.json', function(data){
+				console.log(countryCode, data[countryCode]);
+				phraseId = parseInt(Math.random()*(scorePhrases.length -1));
 				phrase = scorePhrases[phraseId];
-				self.append(data[phrase[0]] + phrase[1]);
+				if(!data[countryCode][phrase[0]] || !phrase[1]){
+					self.append("there were no statistical relevant data collected yet.");
+					return;
+				};
+				self.append(data[countryCode][phrase[0]] + phrase[1]);
 			});
 
-			};
+		});
 	};
 
 	$(function(){
