@@ -19,7 +19,7 @@ class Bribe(models.Model):
     date = models.DateTimeField()
     secure_token = models.CharField(max_length=32, unique=True, blank=True)
     record = models.FileField(upload_to='records/')
-    description = models.TextField()
+    description = models.TextField(blank=True)
     published = models.BooleanField(default=False)
     
     objects = BribeManager()
