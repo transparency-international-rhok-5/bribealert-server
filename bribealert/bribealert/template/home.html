@@ -1,10 +1,6 @@
 {% extends "__base__.html" %}
 
 {% block content %}
-<div>
-	<img src="{{ STATIC_URL }}img/scheme_mock.png" />
-	<!-- geo map -->
-</div>
 
 {% for bribe in bribes %}
 	{% include "partials/bribe.html" %}

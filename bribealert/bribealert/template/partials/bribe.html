@@ -1,0 +1,24 @@
+<div class="evidence">
+<h2><a id="bribe{{bribe.id}}">Evidence #{{bribe.id}}</a></h2>
+<abbr>{{bribe.date|date:"M Y"}}</abbr>
+
+<br /><br />
+
+<div class="row">
+	<div class="span5">		
+		<audio controls="controls">
+		  <source src="{{MEDIA_URL}}{{bribe.record}}" type="audio/mp4" />
+		  Your browser does not support the audio element.
+		</audio>
+	</div>
+
+	<div class="span4">
+		<div class="detail">
+			<p>This happened in <a>{{bribe.country}}</a>.</p>
+<iframe width="250" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.de/maps?hl=de&amp;q=betahaus+berlin&amp;ie=UTF8&amp;hq=betahaus+berlin&amp;hnear=&amp;radius=15000&amp;t=m&amp;ll=52.502603,13.41229&amp;spn=0.006295,0.006295&amp;output=embed"></iframe>
+
+			<p>In <a>{{bribe.country}}</a>, <b>??</b> of the people payed bribe in the last twelve months.</p>
+		</div>
+	</div>
+</div>
+</div>

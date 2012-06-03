@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.views.generic.simple import direct_to_template
@@ -8,10 +9,11 @@ from bribe.models import Bribe
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^upload/$',   'bribe.views.upload'),
-    url(r'^national-chapter/$', 'bribe.views.get_national_chapter'),
-	url(r'^$',          direct_to_template, {'template': 'home.html', 'extra_context': { 
+	(r'^upload/$',   'bribe.views.upload'),
+    (r'^national-chapter/$', 'bribe.views.get_national_chapter'),
+	(r'^$',          direct_to_template, {'template': 'home.html', 'extra_context': { 
 	    'bribes': Bribe.objects.published(), 
     }}),    
-    url(r'^admin/',     include(admin.site.urls)),
+    (r'^admin/',     include(admin.site.urls)),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT})
 )

@@ -3,92 +3,29 @@
 <head>
 	<title>BribeAlert</title>
 	<link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" type="text/css" />
+	<link href="{{ STATIC_URL }}stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="span9">
-			<h1>bribe alert</h1>
-			<div class="well">
-				<img src="{{ STATIC_URL }}img/scheme_mock.png" />
-			</div>
-			{% block content %}	
+			<div class="span9" id="content">
+				<div class="hero-unit">
+					Hello
+				</div>
+				{% block content %}	
 
-			{% endblock %}
+				{% endblock %}
 			</div>
 			<div class="sidebar span3">
-				<h1><br /></h1>
-				<img src="{{ STATIC_URL }}img/Bribe-Alarm-v02-rz.png" />
-
-				<p>
-					<h4>get the app</h4>
-							<br />
-							<br />
-							<br />
-							<br />
-							<br />
-				</p>
-
-				<p>
-					<h4>transparency international</h4>
-							<br />
-							<br />
-							<br />
-							<br />
-							<br />
+				<p style="text-align: center; padding-top: 100px;">
+					<img src="{{ STATIC_URL }}img/bribealarm.png" width="150" />
+					<br /><br />
+					<a href="http://transparency.org/"><img src="{{ STATIC_URL }}img/transparency.png" width="180" /></a>
 				</p>
 			</div>
 		</div>
-	<div class="footer">
-		bribe alert
-	</div>
 	</div>
 
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
 	<!-- javascripts at the end -->
 	<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
 	<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>

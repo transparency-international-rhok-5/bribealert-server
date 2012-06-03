@@ -10,7 +10,7 @@ from django.forms.models import model_to_dict
 
 class BribeManager(models.Manager):
     def published(self):
-        return self.filter(published=True)
+        return self.filter(published=True).order_by('-date')
     
 class Bribe(models.Model):
     lat = models.FloatField()
@@ -19,6 +19,7 @@ class Bribe(models.Model):
     date = models.DateTimeField()
     secure_token = models.CharField(max_length=32, unique=True, blank=True)
     record = models.FileField(upload_to='records/')
+    description = models.TextField()
     published = models.BooleanField(default=False)
     
     objects = BribeManager()
