@@ -98,4 +98,3 @@ class Message(models.Model):
             result['user'] = self.user.__unicode__()
         
         return result
->>>>>>> bf74e444d47ba947086dc57425015bae98611a84
