@@ -68,25 +68,60 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 10, ../sass/screen.scss */
+body {
+  background: #eee;
+  padding-bottom: 3em;
+}
+
+/* line 15, ../sass/screen.scss */
 #content {
+  background: #fff;
   margin-top: 4em;
-  overflow: auto;
-  padding-bottom: 20em;
+  margin-bottom: 10em;
   color: #333333;
   border: 1px solid #ccc;
   padding: 1em;
+  position: relative;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  -ms-border-radius: 4px / 4px;
+  -o-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
 }
-/* line 18, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
+#content .worldmap {
+  height: 220px;
+}
+/* line 29, ../sass/screen.scss */
+#content #logo {
+  position: absolute;
+  right: 50px;
+  top: 120px;
+  width: 100px;
+  z-index: 1000;
+}
+/* line 37, ../sass/screen.scss */
+#content #app-download-btn {
+  font-size: 1.3em;
+  float: none;
+  width: 170px;
+}
+/* line 43, ../sass/screen.scss */
 #content a {
   color: #0066aa;
 }
-/* line 22, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
+#content a.btn {
+  color: #fff;
+  font-weight: bold;
+}
+/* line 52, ../sass/screen.scss */
 #content h1 {
   font-size: 3em;
   font-family: 'DIN Next W01 Regular';
   margin-bottom: 0.2em;
 }
-/* line 28, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 #content p, #content h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: inherit;
@@ -94,30 +129,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-weight: 200;
   line-height: 1.6em;
 }
-/* line 36, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 #content p.transparency-description {
   font-size: 0.8em;
+  width: 200px;
+  float: right;
+  text-align: justify;
 }
-/* line 40, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 #content .evidence {
   border-bottom: 2px solid #0066aa;
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
-/* line 45, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 #content .evidence h2 {
   font-size: 1.6em;
   line-height: 1.7em;
   font-family: 'Helvetica Neue';
 }
-/* line 51, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 #content .evidence p.meta-data {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: inherit;
   font-weight: 200;
   font-style: italic;
 }
-/* line 58, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #content .evidence .detail {
   border: 1px solid #ccc;
   -webkit-border-radius: 4px 4px;
@@ -128,7 +166,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-size: 1em;
   padding: 1em;
 }
-/* line 67, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 #content .hero-unit {
   padding: 1em;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -137,16 +175,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-weight: 200;
   line-height: 27px;
 }
-/* line 75, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 #content .hero-unit h1 {
   font-size: 2em;
 }
-/* line 79, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 #content .hero-unit h1 small {
   display: block;
 }
 
-/* line 85, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 html, body {
   height: 100%;
 }

@@ -8,24 +8,29 @@
 </head>
 <body>
 	<div class="container" id="content">
-		<div class="row">
+		<div class="worldmap"></div>
+		<img src="{{ STATIC_URL }}img/bribealarm.png" id="logo" />			
+		
+		<div class="row" style="margin-top: 2em">
 			<div class="span9">
-				<div class="hero-unit">
-					Hello
-				</div>
 				{% block content %}	
 
 				{% endblock %}
 			</div>
 			<div class="sidebar span3">
-				<p style="text-align: center; padding-top: 100px;">
-					<img src="img/bribealarm.png" width="150" />
-					<br /><br />
+				<p style="text-align:right;">
+					<a href="" class="btn btn-primary btn-large span2" id="app-download-btn">Download<br />Android App</a>
+
+					<br /><br /><br />
+					<p style="text-align:left;padding-left: 20px;">
+					
 					<a href="http://transparency.org/"><img src="img/transparency.png" width="180" /></a>
+					</p>
+					<p class="transparency-description">
+					Transparency International is a global movement with a present in more than 100 countries sharing one vision: a world in which government, business, civil society and the daily lives of people are free of corruption.</p>
+
 				</p>
 				<br />
-				<p class="transparency-description">
-				Transparency International is a global movement with a present in more than 100 countries sharing one vision: a world in which government, business, civil society and the daily lives of people are free of corruption.</p>
 			</div>
 		</div>
 	</div>

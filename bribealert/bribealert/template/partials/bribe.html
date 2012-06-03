@@ -17,15 +17,16 @@
 		
 		<p>
 			{{bribe.description|linebreaksbr}}
+			<a name="fb_share"></a> 
 		</p>
 	</div>
 
 	<div class="span4">
 		<div class="detail">
-			<p>This happened in <a>{{bribe.country}}</a>.</p>
+			<p>This happened in <a href="http://www.transparency.org/country#{{bribe.country.code3}}"><img src="{{STATIC_URL}}img/png/{{bribe.country.code2|lower}}.png" alt="{{bribe.country.code2|lower}}" />&nbsp;{{bribe.country}}</a>.</p>
 				<div data-lon="{{bribe.lon}}" data-lat="{{bribe.lat}}" data-id="bribe{{bribe.id}}"></div>
 
-			<p>In <a>{{bribe.country}}</a>, <b>??</b> of the people payed bribe in the last twelve months.</p>
+			<p>In <a href="http://www.transparency.org/country#{{bribe.country.code3}}"><img src="{{STATIC_URL}}img/png/{{bribe.country.code2|lower}}.png" alt="{{bribe.country.code2|lower}}" />&nbsp;{{bribe.country}}</a>, <b>??</b> of the people payed bribe in the last twelve months.</p>
 		</div>
 	</div>
 </div>

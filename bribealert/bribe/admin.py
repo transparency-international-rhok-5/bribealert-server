@@ -3,6 +3,7 @@ from django.contrib import admin
 from models import Bribe, NationalChapter
 
 class BribeAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'chat_link',)
     exclude = ('country', 'secure_token')
     
     def queryset(self, request):

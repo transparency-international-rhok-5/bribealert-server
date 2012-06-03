@@ -21,10 +21,17 @@ class Bribe(models.Model):
     date = models.DateTimeField()
     secure_token = models.CharField(max_length=32, unique=True, blank=True)
     record = models.FileField(upload_to='records/')
-    description = models.TextField()
+    description = models.TextField(blank=True)
     published = models.BooleanField(default=False)
     
     objects = BribeManager()
+    
+    def chat_link(self): 
+        from django.utils.safestring import mark_safe 
+        return mark_safe('<a href="/admin/chat/%d/">Contact whistleblower</a>' % (self.id, )) 
+
+    chat_link.short_description = "Chat" 
+    chat_link.allow_tags = True
     
     def __generate_secure_token(self):
         while 1:
@@ -53,6 +60,8 @@ class Bribe(models.Model):
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
+    code2 = models.CharField(max_length=2, unique=True)
+    code3 = models.CharField(max_length=3, unique=True)
     
     def __unicode__(self):
         return self.name
@@ -78,5 +87,15 @@ class Message(models.Model):
     # the message was sent by the whistle blower
     user = models.ForeignKey(User, null=True)
     bribe = models.ForeignKey(Bribe)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
+    
+    def to_dict(self):
+        result = model_to_dict(self, fields= ['text'])
+        result['date'] = str(self.date)
+
+        if self.user:
+            result['user'] = self.user.__unicode__()
+        
+        return result
+>>>>>>> bf74e444d47ba947086dc57425015bae98611a84
