@@ -56,7 +56,7 @@ class Bribe(models.Model):
             access_token_key='598222089-ZVMJ1BnrBccjTdqh3DojaPJPvc7ScgBDX8mCljeh',
             access_token_secret='rth7eys2w6KCAisslsep1KDzFTczuoFVhOknpl5m20s')
             try:
-                status = api.PostUpdate('A new bribe was reported! %s/#bribe%d' % (settings.HOST_NAME, self.id))
+                status = api.PostUpdate('A new bribe was reported in %s! %s/#bribe%d' % (self.country, settings.HOST_NAME, self.id))
                 print 'tweet sent, "%s"' % (status,)
             except twitter.TwitterError:
                 pass
