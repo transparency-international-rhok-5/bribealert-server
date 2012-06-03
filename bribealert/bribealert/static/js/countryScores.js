@@ -34,10 +34,9 @@
 			var countryCode = self.data("countrycode");
 
 			$.getJSON('js/countryScores.json', function(data){
-				console.log(countryCode, data[countryCode]);
 				phraseId = parseInt(Math.random()*(scorePhrases.length -1));
 				phrase = scorePhrases[phraseId];
-				if(!data[countryCode][phrase[0]] || !phrase[1]){
+				if( undefined == data[countryCode] || undefined == data[countryCode][phrase[0]] || !phrase[1]){
 					self.append("there were no statistical relevant data collected yet.");
 					return;
 				};
