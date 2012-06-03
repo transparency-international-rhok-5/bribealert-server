@@ -8,6 +8,8 @@ from django.conf import settings
 from django.contrib.auth.models import User, Group
 from django.forms.models import model_to_dict
 
+import twitter
+
 class BribeManager(models.Manager):
     def published(self):
         return self.filter(published=True).order_by('-date')
@@ -38,6 +40,12 @@ class Bribe(models.Model):
         self.secure_token = self.__generate_secure_token()
         self.country = get_country_from_geo_location(self.lat, self.lon)
         super(Bribe, self).save(*args, **kwargs)
+        if self.published:
+            api = twitter.Api(consumer_key='0A8C16ZwuUKj93gDUbIcZw',
+            consumer_secret='jZ44hJjGfYAeyvkNoJn2YVzeToE7vgcVeelUF2A814',
+            access_token_key='598222089-ZVMJ1BnrBccjTdqh3DojaPJPvc7ScgBDX8mCljeh',
+            access_token_secret='rth7eys2w6KCAisslsep1KDzFTczuoFVhOknpl5m20s')
+            api.PostUpdate('A new bribe was reported! www.bribe-alert.org/#bribe%d' % (self.id))
         
     def __unicode__(self):
         return unicode(Geocoder.reverse_geocode(self.lat, self.lon)[0])
