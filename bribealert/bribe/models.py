@@ -7,6 +7,11 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User, Group
 from django.forms.models import model_to_dict
+from django.conf import settings
+from django.core.mail import send_mail
+from django.core import urlresolvers
+
+import twitter
 
 class BribeManager(models.Manager):
     def published(self):
@@ -45,7 +50,21 @@ class Bribe(models.Model):
         self.secure_token = self.__generate_secure_token()
         self.country = get_country_from_geo_location(self.lat, self.lon)
         super(Bribe, self).save(*args, **kwargs)
-        
+        if self.published:
+            api = twitter.Api(consumer_key='0A8C16ZwuUKj93gDUbIcZw',
+            consumer_secret='jZ44hJjGfYAeyvkNoJn2YVzeToE7vgcVeelUF2A814',
+            access_token_key='598222089-ZVMJ1BnrBccjTdqh3DojaPJPvc7ScgBDX8mCljeh',
+            access_token_secret='rth7eys2w6KCAisslsep1KDzFTczuoFVhOknpl5m20s')
+            status = api.PostUpdate('A new bribe was reported! %s/#bribe%d' % (settings.HOST, self.id))
+            print 'tweet sent, "%s"' % (status)
+        else:
+            users = NationalChapter.objects.get(country = self.country).user_set.all()
+            send_mail('New bribe commited!', """A new bribe was commited in your country 
+"%s"
+link to answer: %s""" % (self.description, settings.HOST_NAME +
+            urlresolvers.reverse('admin:bribe_bribe_change', args=(self.id,))),
+            settings.EMAIL_HOST_USER , [user.email for user in users])
+
     def __unicode__(self):
         return unicode(Geocoder.reverse_geocode(self.lat, self.lon)[0])
 
