@@ -44,6 +44,8 @@ class Bribe(models.Model):
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
+    code2 = models.CharField(max_length=2, unique=True)
+    code3 = models.CharField(max_length=3, unique=True)
     
     def __unicode__(self):
         return self.name
