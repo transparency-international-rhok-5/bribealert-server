@@ -23,8 +23,8 @@ class Bribe(models.Model):
     country = models.ForeignKey('Country', blank=True, null=True)
     date = models.DateTimeField()
     secure_token = models.CharField(max_length=32, unique=True, blank=True)
-    audio_record = models.FileField(upload_to='records/', null=True)
-    video_record = models.FileField(upload_to='records/', null=True)
+    audio_record = models.FileField(upload_to='records/', null=True, blank=True)
+    video_record = models.FileField(upload_to='records/', null=True, blank=True)
     description = models.TextField(blank=True, null=True)
     published = models.BooleanField(default=False)
     
