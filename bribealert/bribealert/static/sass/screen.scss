@@ -37,6 +37,7 @@ body {
 	#app-download-btn {
 		font-size: 1.3em;
 		float: none;
+		width: 170px;
 	}
 	
 	a {
@@ -64,6 +65,9 @@ body {
 	
 	p.transparency-description {
 		font-size: 0.8em;
+		width: 200px;
+		float: right;
+		text-align: justify;
 	}
 		
 	.evidence {	

@@ -104,23 +104,24 @@ body {
 #content #app-download-btn {
   font-size: 1.3em;
   float: none;
+  width: 170px;
 }
-/* line 42, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 #content a {
   color: #0066aa;
 }
-/* line 46, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 #content a.btn {
   color: #fff;
   font-weight: bold;
 }
-/* line 51, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 #content h1 {
   font-size: 3em;
   font-family: 'DIN Next W01 Regular';
   margin-bottom: 0.2em;
 }
-/* line 57, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 #content p, #content h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: inherit;
@@ -128,30 +129,33 @@ body {
   font-weight: 200;
   line-height: 1.6em;
 }
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 #content p.transparency-description {
   font-size: 0.8em;
+  width: 200px;
+  float: right;
+  text-align: justify;
 }
-/* line 69, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 #content .evidence {
   border-bottom: 2px solid #0066aa;
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
-/* line 74, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 #content .evidence h2 {
   font-size: 1.6em;
   line-height: 1.7em;
   font-family: 'Helvetica Neue';
 }
-/* line 80, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 #content .evidence p.meta-data {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: inherit;
   font-weight: 200;
   font-style: italic;
 }
-/* line 87, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #content .evidence .detail {
   border: 1px solid #ccc;
   -webkit-border-radius: 4px 4px;
@@ -162,7 +166,7 @@ body {
   font-size: 1em;
   padding: 1em;
 }
-/* line 96, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 #content .hero-unit {
   padding: 1em;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -171,16 +175,16 @@ body {
   font-weight: 200;
   line-height: 27px;
 }
-/* line 104, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 #content .hero-unit h1 {
   font-size: 2em;
 }
-/* line 108, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 #content .hero-unit h1 small {
   display: block;
 }
 
-/* line 114, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 html, body {
   height: 100%;
 }
