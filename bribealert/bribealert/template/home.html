@@ -1,0 +1,11 @@
+{% extends "__base__.html" %}
+
+{% block content %}
+<div style="height:220px;" class="worldmap">
+</div>
+
+{% for bribe in bribes %}
+	{% include "partials/bribe.html" %}
+{% endfor %}
+
+{% endblock %}

@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>BribeAlert</title>
+	<title>BribeAlert</title>
+	<base href="{{ STATIC_URL }}" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
+	<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	{% block content %}	
+	<div class="container" id="content">
+		<div class="row">
+			<div class="span9">
+				<div class="hero-unit">
+					Hello
+				</div>
+				{% block content %}	
 
-	{% endblock %}
+				{% endblock %}
+			</div>
+			<div class="sidebar span3">
+				<p style="text-align: center; padding-top: 100px;">
+					<img src="img/bribealarm.png" width="150" />
+					<br /><br />
+					<a href="http://transparency.org/"><img src="img/transparency.png" width="180" /></a>
+				</p>
+				<br />
+				<p class="transparency-description">
+				Transparency International is a global movement with a present in more than 100 countries sharing one vision: a world in which government, business, civil society and the daily lives of people are free of corruption.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- javascripts at the end -->
+	<script src="js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="openlayers/OpenLayers.js"></script>
+	<script src="js/maps.js"></script>
 </body>
 </html>

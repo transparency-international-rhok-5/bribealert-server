@@ -1,0 +1,32 @@
+<div class="evidence">
+<h2><a href="/#bribe{{bribe.id}}" id="bribe{{bribe.id}}">Evidence #{{bribe.id}}</a></h2>
+
+
+<br />
+
+<div class="row">
+	<div class="span5">		
+		<p class="meta-data">{{bribe.date}}<br />
+		{{bribe}}</p>
+		<br />
+		<audio controls="controls">
+		  <source src="{{MEDIA_URL}}{{bribe.record}}" type="audio/mp4" />
+		  Your browser does not support the audio element.
+		</audio>
+		<br /><br />
+		
+		<p>
+			{{bribe.description|linebreaksbr}}
+		</p>
+	</div>
+
+	<div class="span4">
+		<div class="detail">
+			<p>This happened in <a>{{bribe.country}}</a>.</p>
+				<div data-lon="{{bribe.lon}}" data-lat="{{bribe.lat}}" data-id="bribe{{bribe.id}}"></div>
+
+			<p>In <a>{{bribe.country}}</a>, <b>??</b> of the people payed bribe in the last twelve months.</p>
+		</div>
+	</div>
+</div>
+</div>
