@@ -69,48 +69,55 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 10, ../sass/screen.scss */
 #content {
-  margin-top: 6em;
+  margin-top: 4em;
   overflow: auto;
   padding-bottom: 20em;
   color: #333333;
+  border: 1px solid #ccc;
+  padding: 1em;
 }
-/* line 16, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 #content a {
   color: #0066aa;
 }
-/* line 20, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 #content h1 {
   font-size: 3em;
   font-family: 'DIN Next W01 Regular';
   margin-bottom: 0.2em;
 }
-/* line 26, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 #content p, #content h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: inherit;
-  font-size: 1.1em;
-  font-weight: 200;
-  line-height: 1.7em;
-}
-/* line 38, ../sass/screen.scss */
-#content h3 {
   font-size: 1.0em;
-  font-family: 'DIN Next W01 Regular';
+  font-weight: 200;
+  line-height: 1.6em;
 }
-/* line 44, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
+#content p.transparency-description {
+  font-size: 0.8em;
+}
+/* line 40, ../sass/screen.scss */
+#content .evidence {
+  border-bottom: 2px solid #0066aa;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+/* line 45, ../sass/screen.scss */
 #content .evidence h2 {
   font-size: 1.6em;
   line-height: 1.7em;
   font-family: 'Helvetica Neue';
 }
-/* line 50, ../sass/screen.scss */
-#content .evidence abbr {
+/* line 51, ../sass/screen.scss */
+#content .evidence p.meta-data {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: inherit;
-  font-size: 0.8em;
   font-weight: 200;
+  font-style: italic;
 }
-/* line 57, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 #content .evidence .detail {
   border: 1px solid #ccc;
   -webkit-border-radius: 4px 4px;
@@ -121,7 +128,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-size: 1em;
   padding: 1em;
 }
-/* line 66, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 #content .hero-unit {
   padding: 1em;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -130,16 +137,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-weight: 200;
   line-height: 27px;
 }
-/* line 74, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 #content .hero-unit h1 {
   font-size: 2em;
 }
-/* line 78, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 #content .hero-unit h1 small {
   display: block;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 html, body {
   height: 100%;
 }
