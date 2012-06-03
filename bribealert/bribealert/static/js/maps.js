@@ -1,7 +1,30 @@
-
+(function($){
 var map, layer;
 
-jQuery.fn.geoMap = function(){
+var itemSelector = 'div[data-lon]';
+
+$.fn.worldMap = function(){
+    var zoom = 5;
+
+    map = new OpenLayers.Map({
+        div: this[0],
+        controls: [
+            new OpenLayers.Control.Navigation(),
+            new OpenLayers.Control.PanZoom()
+        ]
+    });
+
+    var markers = setupMap();
+    var items = $(itemSelector);
+
+    for (var i = items.length - 1; i >= 0; i--) {
+        var item = $(items[i]);
+        addMarker(markers, item.data('id'), item.data('lon'), item.data('lat'), 1);
+    };
+};
+
+$.fn.geoMap = function(){
+    var id = this.data('id');
     var lon = this.data('lon');
     var lat = this.data('lat');
     var zoom = 2;
@@ -11,10 +34,16 @@ jQuery.fn.geoMap = function(){
     map = new OpenLayers.Map({
         div: this[0],
         controls: [
-            new OpenLayers.Control.Navigation(),
-            // new OpenLayers.Control.PanZoom()
+            new OpenLayers.Control.Navigation()
         ]
     });
+
+    var markers = setupMap();
+
+    addMarker(markers, id, lon, lat, zoom);
+}
+
+function setupMap(){
     layer = new OpenLayers.Layer.OSM();
     var context = {
       country_transparency: function(feature) {
@@ -42,7 +71,10 @@ jQuery.fn.geoMap = function(){
                                           projection: new OpenLayers.Projection("EPSG:4326")} ));
     var markers = new OpenLayers.Layer.Markers( "Markers" );
     map.addLayer(markers);
+    return markers;
+};
 
+function addMarker(markers, id, lon, lat, zoom){
     var size = new OpenLayers.Size(21,25);
     var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
     var icon = new OpenLayers.Icon('openlayers/img/marker.png',size,offset);
@@ -50,13 +82,16 @@ jQuery.fn.geoMap = function(){
     var position = new OpenLayers.LonLat(lon,lat).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
     myMarker  = new OpenLayers.Marker(position, icon)
     myMarker.events.register("click", myMarker, function() {
-        location.hash = 'foo'
+        location.hash = id;
     });
     markers.addMarker(myMarker);
     map.setCenter(position, zoom);
-};
+}
 
 
 $(function(){
-    $("div[data-lon]").geoMap();
+    $(itemSelector).geoMap();
+    $("div.worldmap").worldMap();
 });
+
+})(jQuery);

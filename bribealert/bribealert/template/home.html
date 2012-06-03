@@ -1,9 +1,7 @@
 {% extends "__base__.html" %}
 
 {% block content %}
-<div>
-	<img src="{{ STATIC_URL }}img/scheme_mock.png" />
-	<!-- geo map -->
+<div style="height:220px;" class="worldmap">
 </div>
 
 {% for bribe in bribes %}
@@ -27,7 +25,7 @@
 
 				<div class="span3">
 					<p>This happened in <a>{{bribe.country}}</a>.</p>
-					<div data-lon="{{bribe.lon}}" data-lat="{{bribe.lat}}">
+					<div data-lon="{{bribe.lon}}" data-lat="{{bribe.lat}}" data-id="{{bribe.id}}">
 					</div>
 					<p>In <a>{{bribe.country}}</a>, <b>??</b> of the people payed bribe in the last twelve months.</p>
 				</div>
