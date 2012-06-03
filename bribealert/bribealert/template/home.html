@@ -5,31 +5,7 @@
 </div>
 
 {% for bribe in bribes %}
-			<div class="evidence row">
-				<div class="span6">
-					<h2><a id="bribe{{bribe.id}}">Evidence #{{bribe.id}}</a></h2>
-					<div style="background-color: #eee">
-						video or audio
-					</div>
-					<br />
-					<br />
-					<span>
-						{{bribe.date|date:"M Y"}}
-					</span>
-
-					<div class="pull-right">
-						share
-					</div>
-
-				</div>
-
-				<div class="span3">
-					<p>This happened in <a>{{bribe.country}}</a>.</p>
-					<div data-lon="{{bribe.lon}}" data-lat="{{bribe.lat}}" data-id="{{bribe.id}}">
-					</div>
-					<p>In <a>{{bribe.country}}</a>, <b>??</b> of the people payed bribe in the last twelve months.</p>
-				</div>
-			</div>
+	{% include "partials/bribe.html" %}
 {% endfor %}
 
 {% endblock %}

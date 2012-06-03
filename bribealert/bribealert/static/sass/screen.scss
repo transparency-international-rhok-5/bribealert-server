@@ -1,0 +1,85 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "./colors.scss";
+
+#content {
+	margin-top: 6em;
+	overflow:auto;
+	padding-bottom: 20em;
+	color: $secondary-color;
+	
+	a {
+		color: $darkBlue;
+	}
+	
+	h1 {
+		font-size: 3em;
+		font-family: 'DIN Next W01 Regular';
+		margin-bottom: 0.2em;
+	}
+			
+	p, h3 {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  	color: inherit;
+  	font-size: 1.1em;
+  	font-weight: 200;
+  	line-height: 1.7em;
+	}
+	
+
+	
+
+	
+	h3 {
+		font-size: 1.0em;
+		font-family: 'DIN Next W01 Regular';
+	}
+	
+	.evidence {		
+		h2 {
+			font-size: 1.6em;
+			line-height: 1.7em;
+			font-family: 'Helvetica Neue';
+		}
+		
+		abbr {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color: inherit;
+			font-size: 0.8em;
+			font-weight: 200;
+		}
+		
+		.detail	{
+			border: 1px solid #ccc;
+			@include border-radius(4px, 4px);
+			font-size: 1em;
+			padding: 1em;
+		}
+	}
+	
+		
+	.hero-unit {
+		padding: 1em;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  	color: inherit;
+  	font-size: 18px;
+  	font-weight: 200;
+  	line-height: 27px;
+		
+		h1 {
+			font-size: 2em;
+		}
+		
+		h1 small {
+			display: block;
+		}		
+	}
+}
+
+html, body { height: 100%; }
+
