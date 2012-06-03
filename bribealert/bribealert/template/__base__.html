@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>BribeAlert</title>
-	<link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" type="text/css" />
+	<base href="{{ STATIC_URL }}" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
 </head>
 <body>
 	<div class="container">
@@ -10,7 +11,7 @@
 			<div class="span9">
 			<h1>bribe alert</h1>
 			<div class="well">
-				<img src="{{ STATIC_URL }}img/scheme_mock.png" />
+				<img src="img/scheme_mock.png" />
 			</div>
 			{% block content %}	
 
@@ -18,7 +19,7 @@
 			</div>
 			<div class="sidebar span3">
 				<h1><br /></h1>
-				<img src="{{ STATIC_URL }}img/Bribe-Alarm-v02-rz.png" />
+				<img src="img/Bribe-Alarm-v02-rz.png" />
 
 				<p>
 					<h4>get the app</h4>
@@ -90,7 +91,9 @@
 						<br />
 						<br />
 	<!-- javascripts at the end -->
-	<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
-	<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="openlayers/OpenLayers.js"></script>
+	<script src="js/maps.js"></script>
 </body>
 </html>
