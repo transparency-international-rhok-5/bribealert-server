@@ -4,10 +4,12 @@ var map, layer;
 var itemSelector = 'div[data-lon]';
 
 $.fn.worldMap = function(){
+    this.each(function(i, el){
+
     var zoom = 5;
 
     map = new OpenLayers.Map({
-        div: this[0],
+        div: el,
         controls: [
             new OpenLayers.Control.Navigation(),
             new OpenLayers.Control.PanZoom()
@@ -21,27 +23,32 @@ $.fn.worldMap = function(){
         var item = $(items[i]);
         addMarker(markers, item.data('id'), item.data('lon'), item.data('lat'), 1);
     };
+    });
 };
 
 $.fn.geoMap = function(){
-    var id = this.data('id');
-    var lon = this.data('lon');
-    var lat = this.data('lat');
-    var zoom = 2;
 
-    this.css("height", this.width());
+    this.each(function(i, el){
 
-    map = new OpenLayers.Map({
-        div: this[0],
-        controls: [
-            new OpenLayers.Control.Navigation()
-        ]
+        var id = $(el).data('id');
+        var lon = $(el).data('lon');
+        var lat = $(el).data('lat');
+        var zoom = 2;
+
+        $(el).css("height", $(el).width());
+
+        map = new OpenLayers.Map({
+            div: el,
+            controls: [
+                new OpenLayers.Control.Navigation()
+            ]
+        });
+
+        var markers = setupMap();
+
+        addMarker(markers, id, lon, lat, zoom);
     });
-
-    var markers = setupMap();
-
-    addMarker(markers, id, lon, lat, zoom);
-}
+};
 
 function setupMap(){
     layer = new OpenLayers.Layer.OSM();
