@@ -15,10 +15,10 @@ def upload(request):
 
     if form.is_valid():
         new_bribe = form.save()
-        response = simplejson.dumps({'id': new_bribe.id})
+        response = simplejson.dumps({'secure_token': new_bribe.secure_token})
 
         return HttpResponse(response, mimetype='application/json')
-
+    
     return HttpResponseBadRequest()
 
 

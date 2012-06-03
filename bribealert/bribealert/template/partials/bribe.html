@@ -9,11 +9,23 @@
 		<p class="meta-data">{{bribe.date}}<br />
 		{{bribe}}</p>
 		<br />
+		
+		{% if bribe.audio_record %}
 		<audio controls="controls">
-		  <source src="{{MEDIA_URL}}{{bribe.record}}" type="audio/mp4" />
+		  <source src="{{MEDIA_URL}}{{bribe.audio_record}}" type="audio/mp4" />
 		  Your browser does not support the audio element.
 		</audio>
 		<br /><br />
+		{% endif %}
+		
+		{% if bribe.video_record %}
+		<video width="320" height="240" controls="controls">
+		  <source src="{{MEDIA_URL}}{{bribe.video_record}}" type="video/mp4" />
+		  Your browser does not support the video tag.
+		</video>
+		<br /><br />
+		{% endif %}
+		
 		
 		<p>
 			{{bribe.description|linebreaksbr}}
