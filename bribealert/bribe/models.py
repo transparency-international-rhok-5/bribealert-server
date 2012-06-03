@@ -7,6 +7,9 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User, Group
 from django.forms.models import model_to_dict
+from django.conf import settings
+from django.core.mail import send_mail
+from django.core import urlresolvers
 
 import twitter
 
@@ -54,6 +57,13 @@ class Bribe(models.Model):
             access_token_secret='rth7eys2w6KCAisslsep1KDzFTczuoFVhOknpl5m20s')
             status = api.PostUpdate('A new bribe was reported! www.bribe-alert.org/#bribe%d' % (self.id))
             print 'tweet sent, "%s"' % (status)
+        else:
+            users = NationalChapter.objects.get(country = self.country).user_set.all()
+            send_mail('New bribe commited!', """A new bribe was commited in your country 
+"%s"
+link to answer: %s""" % (self.description, settings.HOST_NAME +
+            urlresolvers.reverse('admin:bribe_bribe_change', args=(self.id,))),
+            settings.EMAIL_HOST_USER , [user.email for user in users])
 
     def __unicode__(self):
         return unicode(Geocoder.reverse_geocode(self.lat, self.lon)[0])

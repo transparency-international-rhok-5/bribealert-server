@@ -162,3 +162,11 @@ LOGGING = {
 
 SECURE_TOKEN_LENGTH = 32
 UPLOAD_FILENAME_LENGTH = 12
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ti.bribe.alert@googlemail.com'
+EMAIL_HOST_PASSWORD = 'rhok2012'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+HOST_NAME = 'www.bribe-alert.org'
