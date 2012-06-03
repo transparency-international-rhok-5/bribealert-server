@@ -45,8 +45,9 @@ class Bribe(models.Model):
             consumer_secret='jZ44hJjGfYAeyvkNoJn2YVzeToE7vgcVeelUF2A814',
             access_token_key='598222089-ZVMJ1BnrBccjTdqh3DojaPJPvc7ScgBDX8mCljeh',
             access_token_secret='rth7eys2w6KCAisslsep1KDzFTczuoFVhOknpl5m20s')
-            api.PostUpdate('A new bribe was reported! www.bribe-alert.org/#bribe%d' % (self.id))
-        
+            status = api.PostUpdate('A new bribe was reported! www.bribe-alert.org/#bribe%d' % (self.id))
+            print 'tweet sent, "%s"' % (status)
+
     def __unicode__(self):
         return unicode(Geocoder.reverse_geocode(self.lat, self.lon)[0])
 
