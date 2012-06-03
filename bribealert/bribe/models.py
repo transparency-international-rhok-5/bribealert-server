@@ -4,7 +4,6 @@ import random
 from pygeocoder import Geocoder
 
 from django.db import models
-from django.conf import settings
 from django.contrib.auth.models import User, Group
 from django.forms.models import model_to_dict
 from django.conf import settings
@@ -55,8 +54,11 @@ class Bribe(models.Model):
             consumer_secret='jZ44hJjGfYAeyvkNoJn2YVzeToE7vgcVeelUF2A814',
             access_token_key='598222089-ZVMJ1BnrBccjTdqh3DojaPJPvc7ScgBDX8mCljeh',
             access_token_secret='rth7eys2w6KCAisslsep1KDzFTczuoFVhOknpl5m20s')
-            status = api.PostUpdate('A new bribe was reported! %s/#bribe%d' % (settings.HOST, self.id))
-            print 'tweet sent, "%s"' % (status)
+            try:
+                status = api.PostUpdate('A new bribe was reported! %s/#bribe%d' % (settings.HOST_NAME, self.id))
+                print 'tweet sent, "%s"' % (status,)
+            except twitter.TwitterError:
+                pass
         else:
             users = NationalChapter.objects.get(country = self.country).user_set.all()
             send_mail('New bribe commited!', """A new bribe was commited in your country 
