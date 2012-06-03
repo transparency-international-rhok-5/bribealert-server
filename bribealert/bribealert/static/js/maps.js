@@ -6,7 +6,7 @@ var itemSelector = 'div[data-lon]';
 $.fn.worldMap = function(){
     this.each(function(i, el){
 
-    var zoom = 5;
+    var zoom = 1;
 
     map = new OpenLayers.Map({
         div: el,
@@ -33,7 +33,7 @@ $.fn.geoMap = function(){
         var id = $(el).data('id');
         var lon = $(el).data('lon');
         var lat = $(el).data('lat');
-        var zoom = 2;
+        var zoom = 4;
 
         $(el).css("height", $(el).width());
 
