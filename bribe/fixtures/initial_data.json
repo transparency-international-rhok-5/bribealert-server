@@ -2654,7 +2654,7 @@
       "pk":50,
       "model":"auth.group",
       "fields":{
-         "name":"C\u00f4te d'Ivoire",
+         "name":"Côte d\'Ivoire",
          "permissions":[
 
          ]
