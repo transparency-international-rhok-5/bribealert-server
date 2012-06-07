@@ -493,7 +493,7 @@
       "model":"bribe.country",
       "pk":49,
       "fields":{
-         "name":"Cote dIvoire",
+         "name":"Cote d'Ivoire",
          "code2":"CR",
          "code3":"CRI"
 
