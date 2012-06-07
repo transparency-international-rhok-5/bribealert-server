@@ -1688,7 +1688,7 @@
       "model":"bribe.country",
       "pk":171,
       "fields":{
-         "name":"São Tomé and Príncipe",
+         "name":"S\u00e3o Tom\u00e9 and Pr\u00edncipe",
          "code2":"ST",
          "code3":"STP"
       }
