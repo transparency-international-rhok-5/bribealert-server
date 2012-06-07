@@ -1,5 +1,4 @@
 -e git+https://github.com/django/django.git#egg=django-dev
-Django==1.4
 argparse==1.2.1
 certifi==0.0.8
 chardet==1.0.1
