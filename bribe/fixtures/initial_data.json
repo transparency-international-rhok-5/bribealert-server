@@ -490,15 +490,6 @@
       }
    },
    {
-   		"model":"bribe.country",
-      "pk":50,
-      "fields":{
-         "name":"C\u00f4te d'Ivoire",
-         "code2":"CI",
-         "code3":"CIV"
-      }
-   },
-   {
       "model":"bribe.country",
       "pk":51,
       "fields":{
@@ -2654,16 +2645,6 @@
       "model":"auth.group",
       "fields":{
          "name":"Costa Rica",
-         "permissions":[
-
-         ]
-      }
-   },
-   {
-      "pk":50,
-      "model":"auth.group",
-      "fields":{
-         "name":"C\u00f4te d'Ivoire",
          "permissions":[
 
          ]
@@ -4834,16 +4815,6 @@
       "model":"bribe.nationalchapter",
       "fields":{
          "country":49,
-         "permissions":[
-
-         ]
-      }
-   },
-   {
-      "pk":50,
-      "model":"bribe.nationalchapter",
-      "fields":{
-         "country":50,
          "permissions":[
 
          ]
