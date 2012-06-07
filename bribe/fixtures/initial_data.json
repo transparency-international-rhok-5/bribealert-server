@@ -491,6 +491,16 @@
    },
    {
       "model":"bribe.country",
+      "pk":49,
+      "fields":{
+         "name":"Cote dIvoire",
+         "code2":"CR",
+         "code3":"CRI"
+
+      }
+   },
+   {
+      "model":"bribe.country",
       "pk":51,
       "fields":{
          "name":"Croatia",
@@ -2654,7 +2664,7 @@
       "pk":50,
       "model":"auth.group",
       "fields":{
-         "name":"Côte d\\'Ivoire",
+         "name":"C\u00f4te d'Ivoire",
          "permissions":[
 
          ]
