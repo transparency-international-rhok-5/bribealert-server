@@ -1686,15 +1686,6 @@
    },
    {
       "model":"bribe.country",
-      "pk":171,
-      "fields":{
-         "name":"S\u00e3o Tom\u00e9 and Pr\u00edncipe",
-         "code2":"ST",
-         "code3":"STP"
-      }
-   },
-   {
-      "model":"bribe.country",
       "pk":172,
       "fields":{
          "name":"Saudi Arabia",
@@ -3845,16 +3836,6 @@
       "model":"auth.group",
       "fields":{
          "name":"San Marino",
-         "permissions":[
-
-         ]
-      }
-   },
-   {
-      "pk":171,
-      "model":"auth.group",
-      "fields":{
-         "name":"S\u00e3o Tom\u00e9 and Pr\u00edncipe",
          "permissions":[
 
          ]
@@ -6036,16 +6017,6 @@
       "model":"bribe.nationalchapter",
       "fields":{
          "country":170,
-         "permissions":[
-
-         ]
-      }
-   },
-   {
-      "pk":171,
-      "model":"bribe.nationalchapter",
-      "fields":{
-         "country":171,
          "permissions":[
 
          ]
