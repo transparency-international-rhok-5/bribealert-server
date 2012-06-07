@@ -490,13 +490,12 @@
       }
    },
    {
-      "model":"bribe.country",
-      "pk":49,
+   		"model":"bribe.country",
+      "pk":50,
       "fields":{
-         "name":"Côte d'Ivoire",
-         "code2":"CR",
-         "code3":"CRI"
-
+         "name":"C\u00f4te d'Ivoire",
+         "code2":"CI",
+         "code3":"CIV"
       }
    },
    {
