@@ -2336,14 +2336,6 @@
         }
     },
     {
-        "pk": 50,
-        "model": "auth.group",
-        "fields": {
-            "name": "C\u00f4te d'Ivoire",
-            "permissions": []
-        }
-    },
-    {
         "pk": 51,
         "model": "auth.group",
         "fields": {
