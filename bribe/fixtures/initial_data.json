@@ -6205,7 +6205,7 @@
             "email": "",
             "permissions": []
         }
-    }, 
+    },
     {
         "pk": 172,
         "model": "bribe.nationalchapter",
