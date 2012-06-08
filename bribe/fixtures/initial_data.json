@@ -3304,14 +3304,6 @@
         }
     },
     {
-        "pk": 171,
-        "model": "auth.group",
-        "fields": {
-            "name": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
-            "permissions": []
-        }
-    },
-    {
         "pk": 172,
         "model": "auth.group",
         "fields": {
