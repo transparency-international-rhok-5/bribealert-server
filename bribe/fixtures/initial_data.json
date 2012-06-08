@@ -6207,21 +6207,6 @@
         }
     },
     {
-        "pk": 171,
-        "model": "bribe.nationalchapter",
-        "fields": {
-            "city": "",
-            "fax": "",
-            "url": "",
-            "country": 171,
-            "telephone": "",
-            "zipcode": "",
-            "street": "",
-            "email": "",
-            "permissions": []
-        }
-    },
-    {
         "pk": 172,
         "model": "bribe.nationalchapter",
         "fields": {
