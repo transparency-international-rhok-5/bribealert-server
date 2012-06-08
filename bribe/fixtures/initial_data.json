@@ -4407,21 +4407,6 @@
         }
     },
     {
-        "pk": 50,
-        "model": "bribe.nationalchapter",
-        "fields": {
-            "city": "",
-            "fax": "",
-            "url": "",
-            "country": 50,
-            "telephone": "",
-            "zipcode": "",
-            "street": "",
-            "email": "",
-            "permissions": []
-        }
-    },
-    {
         "pk": 51,
         "model": "bribe.nationalchapter",
         "fields": {
